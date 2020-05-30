@@ -2,7 +2,9 @@
 
 [Node](https://nodejs.org/en/) functions that automate the independent versioning and publishing of packages in a monorepo.
 
-**Requires commit messages in the following format:**
+## Commit message format
+
+**Commit messages in the following format are required:**
 
 ```
 <type>(<scope>): <subject>
@@ -12,57 +14,24 @@
 
 **Note:** for `<scope>` don't include the `@scope/` prefix of the package (only the package name).
 
-**Commit message example**
+**Commit message examples**
 
 ```
 feat(package-a): add stuff to package-a
+```
+
+```
+fix(package-b): fix something in package-b
+
+BREAKING CHANGE:
+Description of the breaking changes caused by the fix to package-b
 ```
 
 **Commit message CLI**
 
 A commit message CLI builder like [cz-customisable](https://github.com/leonardoanalista/cz-customizable) can be included in your project to ensure commit messages are always formatted correctly.
 
-**Changelogs**
-
-Changelogs can be generated with something like [auto-changelog](https://github.com/CookPete/auto-changelog) by setting the changelog command run for each package
-
-**Install `auto-changelog` in project**
-
-```
-yarn add --dev auto-changelog
-```
-
-**packages/package-a/package.json**
-
-```json
-"scripts": {
-  "changelog": "auto-changelog"
-},
-"auto-changelog": {
-  "output": "CHANGELOG.md",
-  "tagPattern": "@scope/package-a@"
-}
-```
-
-**scripts/release.js**
-
-```js
-const { getPackages, release } = require('monorepo-release');
-const packages = getPackages();
-
-const config = {
-  changelog: true,
-  changelogCmd: 'yarn changelog',
-};
-
-packages.forEach(release(config));
-```
-
-**Run script locally or in CI**
-
-```bash
-node scripts/release.js
-```
+## Setup
 
 **Requires initial package git tags to exist before `release` can be used to automate publishing**
 
@@ -102,6 +71,48 @@ packages.forEach(release(config));
 ```
 
 [Config options and defaults](https://github.com/shinobi5/monorepo-release/blob/master/src/defaultConfig.js)
+
+**Run script locally or in CI**
+
+```bash
+node scripts/release.js
+```
+
+## Package Changelogs
+
+Package changelogs can be generated with something like [auto-changelog](https://github.com/CookPete/auto-changelog) by setting the changelog command run for each package
+
+**Install `auto-changelog` in project**
+
+```
+yarn add --dev auto-changelog
+```
+
+**packages/package-a/package.json**
+
+```json
+"scripts": {
+  "changelog": "auto-changelog"
+},
+"auto-changelog": {
+  "output": "CHANGELOG.md",
+  "tagPattern": "@scope/package-a@"
+}
+```
+
+**scripts/release.js**
+
+```js
+const { getPackages, release } = require('monorepo-release');
+const packages = getPackages();
+
+const config = {
+  changelog: true,
+  changelogCmd: 'yarn changelog',
+};
+
+packages.forEach(release(config));
+```
 
 **Run script locally or in CI**
 
