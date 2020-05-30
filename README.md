@@ -4,7 +4,7 @@
 
 ## Commit message format
 
-**Commit messages in the following format are required:**
+**Commit messages in the following format are required**
 
 ```
 <type>(<scope>): <subject>
@@ -30,6 +30,8 @@ Description of the breaking changes caused by the fix to package-b
 **Commit message CLI**
 
 A commit message CLI builder like [cz-customisable](https://github.com/leonardoanalista/cz-customizable) can be included in your project to ensure commit messages are always formatted correctly.
+
+This project uses [cz-customisable](https://github.com/leonardoanalista/cz-customizable) (see [project configuration file](https://github.com/shinobi5/monorepo-release/blob/master/.cz-config.js)).
 
 ## Setup
 
