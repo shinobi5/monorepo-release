@@ -1,0 +1,41 @@
+{
+  "name": "monorepo-release",
+  "version": "0.1.0",
+  "description": "Automate versioning and publishing of packages in a monorepo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinobi5/monorepo-release"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "monorepo"
+  ],
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "semver": "^7.2.2"
+  },
+  "devDependencies": {
+    "cz-customizable": "^6.2.0",
+    "husky": "^4.2.5",
+    "onchange": "^7.0.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
+  },
+  "scripts": {
+    "cm": "./node_modules/cz-customizable/standalone.js",
+    "release": "npm publish --access public",
+    "prettier:write": "prettier --write .",
+    "prettier:watch": "onchange '**/*.js' -- prettier --write {{changed}}"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

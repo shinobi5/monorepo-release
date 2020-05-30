@@ -1,0 +1,110 @@
+# :sailboat: Monorepo Release
+
+[Node](https://nodejs.org/en/) functions that automate the independent versioning and publishing of packages in a monorepo.
+
+**Requires commit messages in the following format:**
+
+```
+<type>(<scope>): <subject>
+```
+
+`<scope>` should be the name of the package intended to be released. The commit message format follows the [angular commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines).
+
+**Note:** for `<scope>` don't include the `@scope/` prefix of the package (only the package name).
+
+**Commit message example**
+
+```
+feat(package-a): add stuff to package-a
+```
+
+**Commit message CLI**
+
+A commit message CLI builder like [cz-customisable](https://github.com/leonardoanalista/cz-customizable) can be included in your project to ensure commit messages are always formatted correctly.
+
+**Changelogs**
+
+Changelogs can be generated with something like [auto-changelog](https://github.com/CookPete/auto-changelog) by setting the changelog command run for each package
+
+**Install `auto-changelog` in project**
+
+```
+yarn add --dev auto-changelog
+```
+
+**packages/package-a/package.json**
+
+```json
+"scripts": {
+  "changelog": "auto-changelog"
+},
+"auto-changelog": {
+  "output": "CHANGELOG.md",
+  "tagPattern": "@scope/package-a@"
+}
+```
+
+**scripts/release.js**
+
+```js
+const { getPackages, release } = require('monorepo-release');
+const packages = getPackages();
+
+const config = {
+  changelog: true,
+  changelogCmd: 'yarn changelog',
+};
+
+packages.forEach(release(config));
+```
+
+**Run script locally or in CI**
+
+```bash
+node scripts/release.js
+```
+
+**Requires initial package git tags to exist before `release` can be used to automate publishing**
+
+```
+@scope/package-a@0.1.0
+@scope/package-b@0.1.0
+```
+
+**Generate tags manually or run a function available in this package to generate initial tags across current packages**
+
+**Create initial tags: `scripst/createTags.js`**
+
+```js
+const { createTag, getPackages } = require('monorepo-release');
+const packages = getPackages();
+
+packages.forEach(createTag());
+```
+
+**Run script**
+
+```bash
+node scripts/createTags.js
+```
+
+**Release: `scripts/release.js`**
+
+```js
+const { getPackages, release } = require('monorepo-release');
+const packages = getPackages();
+
+const config = {
+  dryRun: true,
+};
+
+packages.forEach(release(config));
+```
+
+[Config options and defaults](https://github.com/shinobi5/monorepo-release/blob/master/src/defaultConfig.js)
+
+**Run script locally or in CI**
+
+```bash
+node scripts/release.js
+```
