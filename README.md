@@ -44,7 +44,7 @@ This project uses [cz-customisable](https://github.com/leonardoanalista/cz-custo
 
 **Generate tags manually or run a function available in this package to generate initial tags across current packages**
 
-**Create initial tags: `scripst/createTags.js`**
+**Create initial tags: `scripts/createTags.js`**
 
 ```js
 const { createTag, getPackages } = require('monorepo-release');
@@ -82,7 +82,7 @@ node scripts/release.js
 
 ## Package Changelogs
 
-Package changelogs can be generated with something like [auto-changelog](https://github.com/CookPete/auto-changelog) by setting the changelog command run for each package
+Package changelogs can be generated with something like [auto-changelog](https://github.com/CookPete/auto-changelog) by setting the changelog command (`changelogCmd`) that is run (for each package)
 
 **Install `auto-changelog` in project**
 
