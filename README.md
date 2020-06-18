@@ -1,6 +1,6 @@
 # :sailboat: Monorepo Release
 
-[Node](https://nodejs.org/en/) functions that automate the independent versioning and publishing of packages in a monorepo.
+[Node](https://nodejs.org/en/) functions that can be used to automate the independent versioning and publishing of packages in a monorepo.
 
 ## Commit message format
 
@@ -35,7 +35,7 @@ This project uses [cz-customisable](https://github.com/leonardoanalista/cz-custo
 
 ## Setup
 
-**Requires initial package git tags to exist before `release` can be used to automate publishing**
+**Requires initial package git tags to exist before the `release()` function can be used to automate versioning and publishing**
 
 ```
 @scope/package-a@0.1.0
