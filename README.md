@@ -96,7 +96,7 @@ node scripts/release.js
 
 <br />
 
-## Changelog
+## Changelogs
 
 Package changelogs can be generated with something like [auto-changelog](https://github.com/CookPete/auto-changelog) by setting the changelog command (`changelogCmd`) that is run (for each package)
 
