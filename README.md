@@ -1,6 +1,6 @@
 <h1 align="center">:sailboat: Monorepo Release</h1>
 
-<p align="center">Automate the independent versioning and publishing of packages in a monorepo</a>.</p>
+<p align="center">Automate independent versioning and publishing of packages in a monorepo</a>.</p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
