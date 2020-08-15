@@ -12,7 +12,9 @@
 
 [Node](https://nodejs.org/en/) functions that can be used to automate independent versioning and publishing in a monorepo.
 
-### Commit message format
+<br />
+
+## Commit message format
 
 **Commit messages in the following format are required**
 
@@ -43,7 +45,9 @@ A commit message CLI builder like [cz-customisable](https://github.com/leonardoa
 
 This project uses [cz-customisable](https://github.com/leonardoanalista/cz-customizable) (see [project configuration file](https://github.com/shinobi5/monorepo-release/blob/master/.cz-config.js)).
 
-### Setup
+<br />
+
+## Setup
 
 **Requires initial package git tags to exist before the `release()` function can be used to automate versioning and publishing**
 
@@ -90,7 +94,9 @@ packages.forEach(release(config));
 node scripts/release.js
 ```
 
-### Package Changelogs
+<br />
+
+## Changelog
 
 Package changelogs can be generated with something like [auto-changelog](https://github.com/CookPete/auto-changelog) by setting the changelog command (`changelogCmd`) that is run (for each package)
 
