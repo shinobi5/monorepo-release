@@ -10,7 +10,7 @@
 
 <hr />
 
-[Node](https://nodejs.org/en/) functions that can be used to automate independent versioning and publishing in a monorepo.
+[Node](https://nodejs.org/en/) scripts to automate independent versioning and publishing in a monorepo.
 
 <br />
 
