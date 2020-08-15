@@ -1,6 +1,16 @@
-# :sailboat: Monorepo Release
+<h1 align="center">:sailboat: MOnorepo Release</h1>
 
-[Node](https://nodejs.org/en/) functions that can be used to automate the independent versioning and publishing of packages in a monorepo.
+<p align="center">Automate the independent versioning and publishing of packages in a monorepo</a>.</p>
+
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/license-MIT-rebeccapurple.svg?style=flat-square" alt="License MIT">
+  </a>
+</p>
+
+<hr />
+
+[Node](https://nodejs.org/en/) functions that can be used to automate independent versioning and publishing in a monorepo.
 
 ## Commit message format
 
