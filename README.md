@@ -1,4 +1,4 @@
-<h1 align="center">:sailboat: MOnorepo Release</h1>
+<h1 align="center">:sailboat: Monorepo Release</h1>
 
 <p align="center">Automate the independent versioning and publishing of packages in a monorepo</a>.</p>
 
