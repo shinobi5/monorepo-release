@@ -13,6 +13,7 @@
   "keywords": [
     "monorepo"
   ],
+  "author": "David White",
   "main": "src/index.js",
   "files": [
     "src"
