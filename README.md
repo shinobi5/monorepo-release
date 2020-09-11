@@ -10,8 +10,6 @@
 
 <hr />
 
-[Node](https://nodejs.org/en/) scripts to automate independent versioning and publishing in a monorepo.
-
 ## Commit message format
 
 **Commit messages in the following format are required**
