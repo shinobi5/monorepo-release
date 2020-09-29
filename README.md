@@ -41,8 +41,6 @@ A commit message CLI builder like [cz-customisable](https://github.com/leonardoa
 
 This project uses [cz-customisable](https://github.com/leonardoanalista/cz-customizable) (see [project configuration file](https://github.com/shinobi5/monorepo-release/blob/master/.cz-config.js)).
 
-<br />
-
 ## Setup
 
 **Requires initial package git tags to exist before the `release()` function can be used to automate versioning and publishing**
@@ -89,8 +87,6 @@ packages.forEach(release(config));
 ```bash
 node scripts/release.js
 ```
-
-<br />
 
 ## Changelogs
 
